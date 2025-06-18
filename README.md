@@ -97,10 +97,6 @@ Jika Anda ingin berkontribusi pada pengembangan KeuHam, silakan:
 4. Push ke branch (`git push origin fitur-baru`)
 5. Buat Pull Request
 
-## Lisensi
-
-Aplikasi ini dilisensikan di bawah [MIT License](LICENSE).
-
 ---
 
 **KeuHam** © 2025 - Aplikasi Keuangan Bulanan Ilham  
