@@ -103,5 +103,5 @@ Aplikasi ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
 
-**KeuHam** © 2023 - Aplikasi Keuangan Bulanan Ilham  
+**KeuHam** © 2025 - Aplikasi Keuangan Bulanan Ilham  
 *"Mengatur Keuangan dengan Lebih Mudah dan Terencana"*
