@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMoney - Aplikasi Keuangan Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> KeuHam</h1>
+            <p>Kelola keuangan bulanan Ilham</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="balance-card">
+                <h3>Saldo Bulan Ini</h3>
+                <div class="amount" id="saldo">Rp0</div>
+                <div class="summary">
+                    <div class="income">
+                        <span>Pemasukan</span>
+                        <span id="total-pemasukan">Rp0</span>
+                    </div>
+                    <div class="expense">
+                        <span>Pengeluaran</span>
+                        <span id="total-pengeluaran">Rp0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h2><i class="fas fa-plus-circle"></i> Tambah Transaksi</h2>
+                <form id="transaksi-form">
+                    <div class="form-group">
+                        <label for="jenis">Jenis Transaksi</label>
+                        <select id="jenis" required>
+                            <option value="">Pilih Jenis</option>
+                            <option value="pemasukan">Pemasukan</option>
+                            <option value="pengeluaran">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah (Rp)</label>
+                        <input type="number" id="jumlah" placeholder="Masukkan jumlah" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori</label>
+                        <select id="kategori" required>
+                            <option value="">Pilih Kategori</option>
+                            <!-- Options akan diisi oleh JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keterangan">Keterangan</label>
+                        <input type="text" id="keterangan" placeholder="Deskripsi singkat">
+                    </div>
+                    <button type="submit" class="btn"><i class="fas fa-save"></i> Simpan</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="transaction-section">
+            <h2><i class="fas fa-history"></i> Riwayat Transaksi</h2>
+            <div class="filter-controls">
+                <div class="form-group">
+                    <label for="filter-bulan">Bulan:</label>
+                    <select id="filter-bulan">
+                        <option value="all">Semua Bulan</option>
+                        <!-- Options akan diisi oleh JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-jenis">Jenis:</label>
+                    <select id="filter-jenis">
+                        <option value="all">Semua Jenis</option>
+                        <option value="pemasukan">Pemasukan</option>
+                        <option value="pengeluaran">Pengeluaran</option>
+                    </select>
+                </div>
+                <button id="filter-btn" class="btn"><i class="fas fa-filter"></i> Filter</button>
+                <button id="reset-btn" class="btn secondary"><i class="fas fa-sync-alt"></i> Reset</button>
+            </div>
+            <div class="transaction-list" id="daftar-transaksi">
+                <!-- Daftar transaksi akan diisi oleh JavaScript -->
+                <p class="empty-message">Belum ada transaksi. Tambahkan transaksi pertama Anda!</p>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2><i class="fas fa-chart-pie"></i> Laporan Bulanan</h2>
+            <div class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="report-actions">
+                <button id="export-btn" class="btn"><i class="fas fa-file-export"></i> Export Data</button>
+                <button id="import-btn" class="btn secondary"><i class="fas fa-file-import"></i> Import Data</button>
+                <input type="file" id="file-input" accept=".txt" style="display: none;">
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 KeuHam - Aplikasi Keuangan Ilham</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
